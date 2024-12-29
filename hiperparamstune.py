@@ -99,7 +99,7 @@ scheduler = ASHAScheduler(metric="mean_accuracy", mode="max")
 logs_dir=f"{os.getcwd()}/logs"
 
 #if no GPU 0 i n GPU n
-trainable_with_cpu_gpu = tune.with_resources(train_vits, {"cpu": 12, "gpu": 1})
+trainable_with_cpu_gpu = tune.with_resources(train_vits, {"cpu": 1, "gpu": 0})
 tune.utils.wait_for_gpu
 
 ray.init(configure_logging=False)
