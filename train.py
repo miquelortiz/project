@@ -91,7 +91,7 @@ checkpoint = {
         "blk_dropout":hyperparameters['blk_dropout']
 }  
 
-if os.path.exists(f"{os.getcwd()}/app/checkpoint/"):
+if not os.path.exists(f"{os.getcwd()}/app/checkpoint/"):
     os.makedirs(f"{os.getcwd()}/app/checkpoint/")
     
 torch.save(checkpoint, f"{os.getcwd()}/app/checkpoint/checkpoint.pt")
